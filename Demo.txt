@@ -1,1 +1,2 @@
 Hello World
+git remote add origin https://github.com/rishighosh10/HomeShopApp.git
