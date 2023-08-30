@@ -11,11 +11,14 @@ export class ProductService {
 
   getAllProduct(): Observable<any[]> {
     debugger;
-    return this.http.get<any[]>(" Give the path name of product in db table");
+    const headers = {
+      'content-type': 'application/json',
+    };
+    return this.http.get<any[]>("https://localhost:7168/api/Products");
   }
 
   addToCart(obj: any): Observable<any>{
     debugger;
-    return this.http.post<any>(" Give the path name of product in db table",obj);
+    return this.http.post<any>("https://localhost:7168/api/CustomerOrderDetails",obj);
   }
 }

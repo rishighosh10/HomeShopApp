@@ -17,19 +17,29 @@ export class HomeComponent implements OnInit{
     "quantity": 0
   }
   constructor(private ProductService: ProductService){
-
+    this.loadAllProducts();
   }
   ngOnInit(): void {
     debugger;
     this.loadAllProducts();
   }
 
-  loadAllProducts(){
-    debugger;
-    this.ProductService.getAllProduct().subscribe((result: any)=>{
-    this.productList =result.data;
-    })
+  loadAllProducts(): void {
+    this.ProductService.getAllProduct().subscribe({
+      next: (result) => {
+        this.productList = result;
+        console.log(this.productList);
+      },
+      // error: (err) => (this.errorMessage = err),
+    });
   }
+
+  // loadAllProducts(){
+  //   debugger;
+  //   this.ProductService.getAllProduct().subscribe((result: any)=>{
+  //   this.productList =result.data;
+  //   })
+  // }
 
   addItemToCart(productId: number){
     debugger;
