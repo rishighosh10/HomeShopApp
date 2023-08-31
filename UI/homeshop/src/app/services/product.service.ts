@@ -24,6 +24,6 @@ export class ProductService {
     return this.http.post<any>("https://localhost:7168/api/CustomerOrderDetails",obj);
   }
   getCartItemsByCustId(customerId: number) {
-    return this.http.get("" + customerId);
+    return this.http.get("https://localhost:7168/api/CustomerOrders" + customerId);
   }
 }
