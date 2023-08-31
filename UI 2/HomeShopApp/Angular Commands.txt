@@ -1,0 +1,3 @@
+ng g c name  ---- Component Name
+ng g s name  ---- service Name
+ng g m name 

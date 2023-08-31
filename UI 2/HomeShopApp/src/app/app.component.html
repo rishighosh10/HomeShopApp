@@ -1,0 +1,29 @@
+<div class="container-fluid mylayout">
+  <div id="titlebar" class="navbar titlebar">
+    <a class="navbar-brand" href="">
+      <img src="{{brandLogoUrl}}" id="brandlogo" class="brandlogo" alt="">
+    </a>
+    <div class="titlebar-right" *ngIf="!this.isLoggedIn">
+      <button id="home-login-button" type="button" class="login-signup-buttons" routerLink="/login">Login</button>
+      <button id="home-signup-button" type="button" class="login-signup-buttons" routerLink="/signup">SignUp</button>
+    </div>
+    <div class="titlebar-right" *ngIf="this.isLoggedIn">
+      <span class="welcome-text">Welcome, {{this.name}}</span>
+      <button *ngIf="this.role == 'Customer'" id="home-orders-button" type="button" class="login-signup-buttons"
+        routerLink="/customers-order">Orders</button>
+      <button id="home-logout-button" type="button" class="login-signup-buttons" routerLink="/login">Logout</button>
+    </div>
+  </div>
+  <div class="container-fluid content-area">
+    <!-- <div class="menu-cart-area">
+      <app-menu></app-menu>
+      <app-cart></app-cart>
+    </div> -->
+    <!-- <app-admin></app-admin> -->
+    <!-- <app-signup></app-signup> -->
+    <!-- <app-login></app-login> -->
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- <router-outlet></router-outlet> -->
+</div>
