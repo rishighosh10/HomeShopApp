@@ -23,7 +23,7 @@ export class ProductService {
     debugger;
     return this.http.post<any>("https://localhost:7168/api/CustomerOrderDetails",obj);
   }
-  getCartItemsByCustId(customerId: number) {
-    return this.http.get("https://localhost:7168/api/CustomerOrders" + customerId);
+  getCartItemsByCustId(custId: number) : Observable<any> {
+    return this.http.get<any[]>("https://localhost:7168/api/CustomerOrders" + custId);
   }
 }
