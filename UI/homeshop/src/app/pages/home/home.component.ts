@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit{
   productList: any [] = [];
   cartObj : any ={
     "customerOrderDetailsId": 0,
-    "customerOrderId": 0,
+    "customerOrderId": 1,
     "productId": 0,
     "unitPrice": 0,
     "quantity": 0
@@ -46,6 +46,10 @@ export class HomeComponent implements OnInit{
     this.cartObj.productId = productId;
     this.ProductService.addToCart(this.cartObj).subscribe((result: any)=>{
       this.productList =result.data;
+      if(result.result){
+        alert("Product Added To Cart");
+        this.ProductService.cartAddedsubject.next(true);
+      }
       })
   }
 }

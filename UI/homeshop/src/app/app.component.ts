@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'homeshop';
+  constructor(private ProductService: ProductService){
+    this.ProductService.cartAddedsubject.subscribe(res=> {
+
+    })
+  }
 }
