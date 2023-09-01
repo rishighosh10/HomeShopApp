@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { LocalStorageService } from './local-storage.service';
+import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef, AfterContentChecked } from '@angular/core';
 
@@ -20,22 +20,22 @@ export class AppComponent {
   isLoggedIn: Boolean = false;
 
   constructor(
-   // public localStorageService: LocalStorageService,
+    public localStorageService: LocalStorageService,
     private router: Router,
     private cdref: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
-    //this.localStorageService.logout();
+    this.localStorageService.logout();
   }
 
-  // ngAfterContentChecked() {
-  //   this.user = this.localStorageService.get('email');
-  //   this.name = this.localStorageService.get('name');
-  //   this.role = this.localStorageService.get('role');
-  //   this.localStorageService.getUserLoggedInStatus().subscribe((status: Boolean) => {
-  //     this.isLoggedIn = status;
-  //   });
-  //   this.cdref.detectChanges();
-  // }
+  ngAfterContentChecked() {
+    this.user = this.localStorageService.get('email');
+    this.name = this.localStorageService.get('name');
+    this.role = this.localStorageService.get('role');
+    this.localStorageService.getUserLoggedInStatus().subscribe((status: Boolean) => {
+      this.isLoggedIn = status;
+    });
+    this.cdref.detectChanges();
+  }
 }

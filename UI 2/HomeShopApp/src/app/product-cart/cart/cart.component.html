@@ -1,0 +1,56 @@
+<div class='card'>
+  <div class='card-header text-center pt-2'>
+    <h4>Your Basket</h4>
+  </div>
+  <div class="p-2">
+    <div class="cart-container" *ngIf="isCartEmpty(); else cartNotEmpty">
+      <p class="empty-message">Your basket is empty!</p>
+    </div>
+    <ng-template #cartNotEmpty>
+      <div class="items-container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems; let i=index">
+              <td>{{item.itemName}}</td>
+              <td>
+                <button class="btn btn-lg px-1 py-0 border-0" (click)="decrementQuantity(item)">
+                  <fa-icon [icon]="faSquareMinus" style="color:blue; font-size: larger;">
+                  </fa-icon>
+                </button>
+                {{ item.quantity }}
+                <button class="btn btn-lg px-1 py-0 border-0" (click)="incrementQuantity(item)">
+                  <fa-icon [icon]="faSquarePlus" style="color:blue; font-size: larger;">
+                  </fa-icon>
+                </button>
+              </td>
+              <td>{{item.price | currency:'INR'}}</td>
+              <td>
+                <button class='btn btn-lg border-0' (click)="removeItem(i)">
+                  <fa-icon [icon]="faSquareXmark" style="color:red; font-size: larger;">
+                  </fa-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr />
+      <b>
+        <p>Subtotal:&emsp;{{getTotalPrice() | currency:'INR'}}</p>
+        <p>GST:&emsp;{{ getGST(getTotalPrice()) | currency:'INR'}}</p>
+        <p>Amount Payable:&emsp;{{ getAmountPayable(getTotalPrice()) | currency:'INR'}}</p>
+      </b>
+      <div class="card-footer">
+        <button class="btn btn-primary" routerLink="order-details">Checkout</button>
+      </div>
+    </ng-template>
+  </div>
+</div>

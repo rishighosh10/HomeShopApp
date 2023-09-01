@@ -1,0 +1,136 @@
+.menu {
+  position: relative;
+  height: 100%;
+  background: url("../../../assets/Images/foodbackground.jpg");
+  background-size: cover;
+}
+
+.nav-menu-container {
+  width: 100%;
+  /* background-color: aqua; */
+  position: relative;
+  overflow-y: auto;
+  /* overflow: auto; */
+}
+
+.navbar {
+  position: relative;
+  background-color: var(--hunger-orange);
+  width: 100%;
+  padding: 1% 1%;
+}
+
+.nav-button {
+  border: none;
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-right: 20px;
+  font-size: larger;
+  color: var(--hunger-orange);
+  font-family: serif;
+  font-weight: bold;
+}
+
+.menu-button {
+  margin-right: 50px;
+}
+
+.form-switch-container {
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: larger;
+  color: green;
+}
+
+.form-check-input:checked {
+  background-color: green;
+  border-color: green;
+  box-shadow: none;
+}
+
+.form-check-input:not(:checked) {
+  background-color: white;
+  border-color: green;
+  box-shadow: none;
+}
+
+.menu-button .nav-link {
+  color: var(--hunger-orange);
+  font-weight: bold;
+  font-family: cursive;
+  font-size: larger;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.currency {
+  font-size: 14px;
+  color: #888;
+  margin-left: 4px;
+}
+
+.order-button {
+  background-color: var(--hunger-orange);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-button:hover {
+  background-color: #ff6822;
+}
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 1%;
+}

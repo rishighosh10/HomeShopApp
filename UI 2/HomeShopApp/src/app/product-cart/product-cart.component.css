@@ -1,0 +1,8 @@
+.menu-cart-area {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72% auto;
+  padding: 0;
+  height: 100%;
+  background-color: white;
+}

@@ -1,1 +1,20 @@
-<p>customer-order works!</p>
+<div class="container-fluid p-1">
+  <table class="table table-striped" *ngIf='orders.length'>
+    <thead>
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Payment Method</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let order of orders'>
+        <td>{{order.customerOrderId}}</td>
+        <td>{{order.amount | currency:'INR'}}</td>
+        <td>{{order.paymentMethod}}</td>
+        <td>{{order.orderStatus}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

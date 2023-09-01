@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  max-height: 100%;
+  width: 100%;
+  /* background-color: orchid; */
+  overflow-y: auto;
+  border-radius: 0px;
+}
+
+.card-header {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  color: var(--hunger-orange);
+  font-size: larger;
+  border: var(--hunger-orange) 5px solid;
+  border-radius: 0px;
+  margin: 0;
+}
+
+.btn {
+  font-size: large;
+  font-weight: bold;
+}
+
+td {
+  vertical-align: middle;
+}
+
+.empty-message {
+  font-family: cursive;
+  font-size: larger;
+  text-align: center;
+  font-weight: bold;
+  padding: 10% 0%;
+  color: red;
+}

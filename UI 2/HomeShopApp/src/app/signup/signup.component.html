@@ -1,1 +1,124 @@
 <p>signup works!</p>
+<div class="container">
+  <!-- <div class="row"> -->
+  <!-- <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3"> -->
+  <div class="panel border bg-white">
+    <div class="panel-heading">
+      <h3 class="pt-3 font-weight-bold">SignUp</h3>
+    </div>
+    <div class="panel-body p-3 pt-2">
+      <form class="add-signup-form" [formGroup]="addSignupForm" (ngSubmit)="addSignupSubmit()">
+        <div class="col">
+          <span class="fa fa-user p-2"></span>
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name"
+            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
+          <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+            <div *ngIf="f['name'].errors['required']">Fullname is required</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <span class="fa fa-user p-2"></span>
+              <label for="email1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback mb-0">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <span class="fa fa-user p-2"></span>
+              <label for="contact" class="form-label">Contact</label>
+              <input type="text" class="form-control" id="contact" formControlName="contact" placeholder="Contact"
+                [ngClass]="{ 'is-invalid': submitted && f['contact'].errors }" />
+              <div *ngIf="submitted && f['contact'].errors" class="invalid-feedback">
+                <div *ngIf="f['contact'].errors['required']">Contact is required</div>
+                <div *ngIf="f['contact'].errors['pattern']">Contact is invalid</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <span class="fa fa-user p-2"></span>
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" formControlName="address" placeholder="Address"
+                [ngClass]="{ 'is-invalid': submitted && f['address'].errors }" />
+              <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                <div *ngIf="f['address'].errors['required']">Address is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <span class="fa fa-user p-2"></span>
+              <label for="pinCode" class="form-label">pincode</label>
+              <input type="text" class="form-control" id="pinCode" formControlName="pinCode" placeholder="pincode"
+                [ngClass]="{ 'is-invalid': submitted && f['pinCode'].errors }" />
+              <div *ngIf="submitted && f['pinCode'].errors" class="invalid-feedback">
+                <div *ngIf="f['pinCode'].errors['required']">pincode is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="mb-3">
+              <span class="fa fa-lock p-2"></span>
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password"
+                placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['pattern']">
+                  Password Constraints:
+                  <ul>
+                    <li>Must be 8 - 15 characters long</li>
+                    <li>Must contain at least one lowecase character</li>
+                    <li>Must contain at least one uppercase character</li>
+                    <li>Must contain at least one numeric character</li>
+                    <li>Must contain at least one special symbol</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3">
+              <span class="fa fa-lock p-2"></span>
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+                placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" />
+              <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+                <div *ngIf="f['confirmPassword'].errors['required']">Password is required</div>
+                <!-- <div *ngIf="( ShowPasswordError | async)==true" class="invalid-feedback">Both the passwords should match</div> -->
+                <div *ngIf="ShowPasswordError" class="invalid-feedback">Both the passwords should match</div>
+                <div *ngIf="f['confirmPassword'].errors['pattern']">
+                  Password Constraints:
+                  <ul>
+                    <li>Must be 8 - 15 characters long</li>
+                    <li>Must contain at least one lowecase character</li>
+                    <li>Must contain at least one uppercase character</li>
+                    <li>Must contain at least one numeric character</li>
+                    <li>Must contain at least one special symbol</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-block mt-4 w-100 signup-button">Signup</button>
+        <div class="text-center pt-4 text-muted">Already have account? <a id="forget" routerLink="/login">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- </div> -->
+</div>
