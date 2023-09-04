@@ -11,7 +11,7 @@ import { LocalStorageService } from './local-storage.service';
 @Injectable({
   providedIn: 'root',
 })
-export class productCartOrderService {
+export class ProductCartService {
   constructor(
     private http: HttpClient,
     private localStorageService: LocalStorageService

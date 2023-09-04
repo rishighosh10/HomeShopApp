@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { productCartOrderService } from '../../product-cart-order.service';
+import { ProductCartService } from '../../product-cart.service';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { ProductCartComponent } from '../product-cart.component';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
-export class productComponent {
+export class ProductComponent {
   faCartPlus = faCartPlus;
 
   items!: any[];
@@ -22,14 +23,14 @@ export class productComponent {
   // selectedFoodCategoryId: number = 1;
   errorMessage: string = '';
 
-  constructor(public productCartOrderService: productCartOrderService) {}
+  constructor(public productCartService: ProductCartService) {}
 
   ngOnInit() {
     this.getproductData();
   }
 
   getproductData(): void {
-    this.productCartOrderService.getproductDataService().subscribe({
+    this.productCartService.getproductDataService().subscribe({
       next: (productData: any[]) => {
         this.items = productData;
         this.items = this.items.filter((item) => item.isActive === true);
@@ -76,7 +77,7 @@ export class productComponent {
   // }
 
   addToCart(productId: number, itemName: string, price: number): void {
-    this.productCartOrderService.addItemToCartService(
+    this.productCartService.addItemToCartService(
       productId,
       itemName,
       this.quantity,

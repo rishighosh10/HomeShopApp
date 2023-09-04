@@ -1,9 +1,9 @@
-import { productCartComponent } from './../product-cart.component';
+import { ProductCartComponent } from './../product-cart.component';
 import { Component } from '@angular/core';
-import { productCartOrderService } from '../../product-cart.service';
+import { ProductCartService } from '../../product-cart.service';
 import { Router } from '@angular/router';
 import { CartItem } from './cart-item';
-//import { faSquareXmark, faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons';
+import { faSquareXmark, faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -11,9 +11,9 @@ import { CartItem } from './cart-item';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  // faSquareXmark = faSquareXmark;
-  // faSquarePlus = faSquarePlus;
-  // faSquareMinus = faSquareMinus;
+  faSquareXmark = faSquareXmark;
+  faSquarePlus = faSquarePlus;
+  faSquareMinus = faSquareMinus;
 
   emptycart: any;
   cartItems: any[] = [];
@@ -49,14 +49,14 @@ export class CartComponent {
   // cartItems: CartItem[] = [];
 
   constructor(
-    public productCartOrderService: productCartOrderService,
+    public productCartService: ProductCartService,
     private router: Router // private detailsService: DetailsService
   ) {
-    this.cartItems = productCartOrderService.getCartItemsService();
+    this.cartItems = productCartService.getCartItemsService();
   }
 
   ngOnInit() {
-    this.cartItems = this.productCartOrderService.getCartItemsService();
+    this.cartItems = this.productCartService.getCartItemsService();
   }
 
   incrementQuantity(item: CartItem): void {

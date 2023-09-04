@@ -2,7 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CartItem } from '../product-cart/cart/cart-item';
 import { Component, OnInit } from '@angular/core';
-import { productCartOrderService } from '../product-cart-order.service';
+import { ProductCartService } from '../product-cart.service';
 import { OrderDetailsService } from './order-details.service';
 import { LocalStorageService } from '../local-storage.service';
 import {
@@ -74,12 +74,12 @@ export class OrderDetailsComponent {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private productCartOrderService: productCartOrderService,
+    private productCartService: ProductCartService,
     private orderDetailsService: OrderDetailsService,
     private router: Router,
     private localStorageService: LocalStorageService
   ) {
-    this.cartItems = productCartOrderService.getCartItemsService();
+    this.cartItems = productCartService.getCartItemsService();
     //console.log(this.cartItems);
     // this.AmountPayable=this.cartService.AmountPayable;
     if (this.localStorageService.get('role') == 'Customer') {
@@ -126,9 +126,9 @@ export class OrderDetailsComponent {
       };
     });
     // this.AmountPayable=this.cartService.AmountPayable;
-    this.amount = this.productCartOrderService.getAmountService();
-    this.gst = this.productCartOrderService.getGstService();
-    this.finalAmount = this.productCartOrderService.getFinalAmountService();
+    this.amount = this.productCartService.getAmountService();
+    this.gst = this.productCartService.getGstService();
+    this.finalAmount = this.productCartService.getFinalAmountService();
   }
 
   // getGuestId(): void {
@@ -187,38 +187,38 @@ export class OrderDetailsComponent {
     }
     // else {
     //   // let guest: IGuest = {
-        // name: this.orderDetailsForm.get('name')?.value,
-        // contact: this.orderDetailsForm.get('contact')?.value,
-      };
-      // this.orderDetailsService.addGuestService(guest).subscribe((data) => {
-      //   console.log(data);
-      //   this.guestId = data.guestId;
+    //     name: this.orderDetailsForm.get('name')?.value,
+    //     contact: this.orderDetailsForm.get('contact')?.value,
+    //   };
+    //   this.orderDetailsService.addGuestService(guest).subscribe((data) => {
+    //     console.log(data);
+    //     this.guestId = data.guestId;
 
-        // let guestOrder: IGuestOrder = {
-        //   orderDate: new Date(),
-        //   amount: this.finalAmount,
-        //   paymentMethod: this.selectedMethod,
-        //   transactionId: uuidv4(),
-        //   orderStatus: 'Pending',
-        //   guestId: this.guestId,
-        };
+    //     let guestOrder: IGuestOrder = {
+    //       orderDate: new Date(),
+    //       amount: this.finalAmount,
+    //       paymentMethod: this.selectedMethod,
+    //       transactionId: uuidv4(),
+    //       orderStatus: 'Pending',
+    //       guestId: this.guestId,
+    //     };
 
-        // this.orderDetailsService
-        //   .addGuestOrderService(guestOrder)
-        //   .subscribe((data) => {
-        //     console.log(data);
+    //     this.orderDetailsService
+    //       .addGuestOrderService(guestOrder)
+    //       .subscribe((data) => {
+    //         console.log(data);
 
-        //     this.products.forEach((element) => {
-        //       let guestOrderDetails: IGuestOrderDetails = {
-        //         guestOrderId: data.guestOrderId,
-        //         foodMenuId: element.FoodMenuId,
-        //         unitPrice: element.Price,
-        //         quantity: element.Qty,
-        //       };
-        //       this.orderDetailsService
-        //         .addGuestOrderDetailsService(guestOrderDetails)
-        //         .subscribe((data) => {
-        //           console.log(data);
+    //         this.products.forEach((element) => {
+    //           let guestOrderDetails: IGuestOrderDetails = {
+    //             guestOrderId: data.guestOrderId,
+    //             foodMenuId: element.FoodMenuId,
+    //             unitPrice: element.Price,
+    //             quantity: element.Qty,
+    //           };
+    //           this.orderDetailsService
+    //             .addGuestOrderDetailsService(guestOrderDetails)
+    //             .subscribe((data) => {
+    //               console.log(data);
     //     //           this.router.navigateByUrl('/payment');
     //             });
     //         });

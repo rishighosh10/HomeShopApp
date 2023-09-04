@@ -19,16 +19,16 @@ import { LoginComponent } from './login/login.component';
 // import { CustomerListComponent } from './admin/customer-list/customer-list.component';
 // import { EditMenuComponent } from './admin/edit-menu/edit-menu.component';
 // import { MenuListComponent } from './admin/menu-list/menu-list.component';
-import { productCartComponent } from './product-cart/product-cart.component';
-import { productComponent } from './product-cart/product/product.component';
+import { ProductCartComponent } from './product-cart/product-cart.component';
 import { CartComponent } from './product-cart/cart/cart.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 //import { OrderListComponent } from './admin/order-list/order-list.component';
 //import { AdminOrderDetailsComponent } from './admin/admin-order-details/admin-order-details.component';
 import { DatePipe } from '@angular/common';
 import { CustomersOrderComponent } from './customer-order/customer-order.component';
+import { ProductComponent } from './product-cart/product/product.component';
 //import { PaymentComponent } from './order-details/payment/payment.component';
-//import { productCartComponent } from './product-cart/product-cart.component';
+// import { productCartComponent } from './product-cart/product-cart.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -74,14 +74,14 @@ const routes: Routes = [
   { path: 'order-details', component: OrderDetailsComponent },
   { path: 'customers-order', component: CustomersOrderComponent },
   //{ path: 'payment', component: PaymentComponent },
-  { path: '', component: productCartComponent },
+  { path: '', component: ProductCartComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    productCartComponent,
-    productCartComponent,
+    ProductCartComponent,
+    ProductComponent,
     CartComponent,
     OrderDetailsComponent,
     CustomersOrderComponent,

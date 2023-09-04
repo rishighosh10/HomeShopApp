@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private adminLoginUrlApi = 'https://localhost:44332/api/Auth/AdminLogin'
-  private customerLoginUrlApi = 'https://localhost:44332/api/Auth/CustomerLogin'
+  // private adminLoginUrlApi = 'https://localhost:44332/api/Auth/AdminLogin'
+  private customerLoginUrlApi = 'https://localhost:7168/api/Auth/CustomerLogin'
 
   constructor(private http: HttpClient) {}
 
@@ -19,9 +19,9 @@ export class LoginService {
     let body = JSON.stringify(login);
     console.log(body)
 
-    if(isAdmin)
-      return this.http.post(this.adminLoginUrlApi, body, {'headers': headers})
-    else
+    // if(isAdmin)
+    //   return this.http.post(this.adminLoginUrlApi, body, {'headers': headers})
+    // else
       return this.http.post(this.customerLoginUrlApi, body, {'headers': headers})
   }
 }
