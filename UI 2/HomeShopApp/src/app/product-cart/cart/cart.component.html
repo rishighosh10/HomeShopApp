@@ -49,7 +49,7 @@
         <p>Amount Payable:&emsp;{{ getAmountPayable(getTotalPrice()) | currency:'INR'}}</p>
       </b>
       <div class="card-footer">
-        <button class="btn btn-primary" routerLink="order-details">Checkout</button>
+        <button class="btn btn-primary" (click)="checkout()" routerLink="order-details">Checkout</button>
       </div>
     </ng-template>
   </div>
