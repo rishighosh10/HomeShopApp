@@ -42,10 +42,9 @@ export class ProductComponent {
   }
 
   getproductCategoryName(productCategoryId: number): string {
-    if (productCategoryId == 1) return 'NewArrival';
-    else if (productCategoryId == 2) return 'BestSellers';
-    else if (productCategoryId == 3) return 'Featured';
-    else if (productCategoryId == 4) return 'SpecialOffer';
+    if (productCategoryId == 1) return 'electronics';
+    else if (productCategoryId == 4) return 'jewellery';
+    else if (productCategoryId == 5) return 'dress';
     else return '';
   }
 
