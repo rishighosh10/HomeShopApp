@@ -27,8 +27,7 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
 import { DatePipe } from '@angular/common';
 import { CustomersOrderComponent } from './customer-order/customer-order.component';
 import { ProductComponent } from './product-cart/product/product.component';
-//import { PaymentComponent } from './order-details/payment/payment.component';
-// import { productCartComponent } from './product-cart/product-cart.component';
+import { PaymentComponent } from './order-details/payment/payment/payment.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -73,7 +72,7 @@ const routes: Routes = [
   // },
   { path: 'order-details', component: OrderDetailsComponent },
   { path: 'customers-order', component: CustomersOrderComponent },
-  //{ path: 'payment', component: PaymentComponent },
+  { path: 'payment', component: PaymentComponent },
   { path: '', component: ProductCartComponent },
 ];
 
@@ -85,6 +84,7 @@ const routes: Routes = [
     CartComponent,
     OrderDetailsComponent,
     CustomersOrderComponent,
+    PaymentComponent,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { ICustomerOrder, ICustomerOrderDetails } from './order';
-// import { IGuest } from './guest';
 import { LocalStorageService } from '../local-storage.service';
 
 @Injectable({

@@ -1,0 +1,14 @@
+.container {
+  height: 100%;
+  display: flex;
+}
+
+.card {
+  width: 50%;
+  height: 90%;
+}
+
+img {
+  height: 100%;
+  object-fit: contain;
+}
