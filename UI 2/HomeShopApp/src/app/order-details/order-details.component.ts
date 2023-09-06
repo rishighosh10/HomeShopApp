@@ -52,7 +52,7 @@ export class OrderDetailsComponent {
   faCreditCard = faCreditCard;
   faMoneyBill = faMoneyBill;
 
-  products: { FoodMenuId: number; Name: String; Qty: number; Price: number }[] =
+  products: { ProductId: number; Name: String; Qty: number; Price: number }[] =
     [];
   selectedMethod: string = '';
   payment: any[] = ['credit', 'cash', 'debit'];
@@ -119,7 +119,7 @@ export class OrderDetailsComponent {
     // Convert the cart data to the desired format
     this.products = this.cartItems.map((item) => {
       return {
-        FoodMenuId: item.foodMenuId,
+        ProductId: item.productId,
         Name: item.itemName,
         Qty: item.quantity,
         Price: item.price,
@@ -171,7 +171,7 @@ export class OrderDetailsComponent {
           this.products.forEach((element) => {
             let customerOrderDetails: ICustomerOrderDetails = {
               customerOrderId: data.customerOrderId,
-              productId: element.FoodMenuId,
+              productId: element.ProductId,
               unitPrice: element.Price,
               quantity: element.Qty,
             };

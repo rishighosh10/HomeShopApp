@@ -19,7 +19,7 @@ export class ProductCartService {
 
   //#region Menu Area
 
-  private productApiUrl = 'https://localhost:7168/api/Products';
+  private productApiUrl = 'https://localhost:44359/api/Products';
 
   getproductDataService(): Observable<any> {
     const headers = {

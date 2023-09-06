@@ -17,7 +17,7 @@ export class CustomersOrderService {
   ) {}
 
   private customerSOrderUrlApi =
-    'https://localhost:44332/api/CustomerOrders/CustomerId';
+    'https://localhost:44359/api/CustomerOrders/CustomerId';
 
   getCustomersOrderService(custId: number): Observable<any[]> {
     const headers = {

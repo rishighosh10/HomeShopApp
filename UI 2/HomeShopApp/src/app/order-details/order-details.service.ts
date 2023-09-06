@@ -11,9 +11,9 @@ export class OrderDetailsService {
   private cartData: any[] = [];
   private guestId: any;
 
-  private customerOrderUrlApi = 'https://localhost:7168/api/CustomerOrders';
+  private customerOrderUrlApi = 'https://localhost:44359/api/CustomerOrders';
   private customerOrderDetailsUrlApi =
-    'https://localhost:7168/api/CustomerOrderDetails';
+    'https://localhost:44359/api/CustomerOrderDetails';
   //private guestOrderUrlApi = 'https://localhost:44332/api/GuestOrders';
   // private guestOrderDetailsUrlApi =
   //   'https://localhost:44332/api/GuestOrderDetails';

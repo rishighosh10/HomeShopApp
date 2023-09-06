@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class SignupListService {
-  private custUrlApi = 'https://localhost:7168/api/Auth/Register';
+  private custUrlApi = 'https://localhost:44359/api/Auth/Register';
 
   constructor(private http: HttpClient) {}
 

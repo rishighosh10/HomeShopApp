@@ -72,13 +72,15 @@ export class CartComponent {
   }
 
   checkout(){
-    if (this.localStorageService.get('token') == 'Customer') {
-      this.router.navigateByUrl('');
+    if (this.localStorageService.get('role') == 'Customer') {
+      this.router.navigateByUrl('/order-details');
       // this.localStorageService.setUserLoggedInStatus(true);
     } else {
       this.router.navigateByUrl('/login');
       // this.localStorageService.setUserLoggedInStatus(false);
     }
+
+
   }
 
   // checkout() {
