@@ -85,3 +85,7 @@ input[type="text"] input[type="password"] {
   color: var(--hunger-orange);
   background-color: white;
 }
+
+.panel-body{
+  text-align: left;
+}

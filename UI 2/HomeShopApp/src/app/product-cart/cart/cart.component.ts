@@ -4,6 +4,7 @@ import { ProductCartService } from '../../product-cart.service';
 import { Router } from '@angular/router';
 import { CartItem } from './cart-item';
 import { faSquareXmark, faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons';
+import { LocalStorageService } from '../../local-storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -50,7 +51,8 @@ export class CartComponent {
 
   constructor(
     public productCartService: ProductCartService,
-    private router: Router // private detailsService: DetailsService
+    private router: Router,// private detailsService: DetailsService
+    private localStorageService: LocalStorageService,
   ) {
     this.cartItems = productCartService.getCartItemsService();
   }
@@ -66,6 +68,16 @@ export class CartComponent {
   decrementQuantity(item: CartItem): void {
     if (item.quantity > 1) {
       item.quantity--;
+    }
+  }
+
+  checkout(){
+    if (this.localStorageService.get('token') == 'Customer') {
+      this.router.navigateByUrl('');
+      // this.localStorageService.setUserLoggedInStatus(true);
+    } else {
+      this.router.navigateByUrl('/login');
+      // this.localStorageService.setUserLoggedInStatus(false);
     }
   }
 
