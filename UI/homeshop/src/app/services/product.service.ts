@@ -16,14 +16,14 @@ export class ProductService {
     const headers = {
       'content-type': 'application/json',
     };
-    return this.http.get<any[]>("https://localhost:7168/api/Products");
+    return this.http.get<any[]>("https://localhost:44359/api/Products");
   }
 
   addToCart(obj: any): Observable<any>{
     debugger;
-    return this.http.post<any>("https://localhost:7168/api/CustomerOrderDetails",obj);
+    return this.http.post<any>("https://localhost:44359/api/CustomerOrderDetails",obj);
   }
   getCartItemsByCustId(custId: number) : Observable<any> {
-    return this.http.get<any[]>("https://localhost:7168/api/CustomerOrders" + custId);
+    return this.http.get<any[]>("https://localhost:44359/api/CustomerOrders" + custId);
   }
 }

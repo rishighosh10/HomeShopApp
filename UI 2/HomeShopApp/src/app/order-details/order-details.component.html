@@ -35,34 +35,34 @@
           <div class="text-right py-1">{{finalAmount | currency:'INR'}}</div>
         </div>
       </div>
-      <!-- <div>TotalPrice:{{amount}}</div>
+      <div>TotalPrice:{{amount}}</div>
       <div>GST:{{gst}}</div>
-      <div>Amountpayable:{{finalAmount}}</div> -->
+      <div>Amountpayable:{{finalAmount}}</div>
     </div>
   </div>
   <br>
   <div class=totalBox>
-    <!-- <form class = inline> -->
+     <form class = inline>
 
-    <div class="information">
+    <!-- <div class="information">
       <h1 class="header">Who's the order for?</h1>
 
-      <!-- <label for="fname">Name:</label><br> -->
+      <label for="fname">Name:</label><br>
       <div class="input-group">
         <div class="input-group-prepend">
           <fa-icon [icon]="faUserCircle" style="color:black; font-size: larger;" class="input-group-text p-2"></fa-icon>
-          <!-- <i class="fa fa-user-circle-o input-group-text" aria-hidden="true"></i> -->
+          <i class="fa fa-user-circle-o input-group-text" aria-hidden="true"></i>
         </div>
         <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name"
           [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
         <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
           <div *ngIf="f['name'].errors['required']">Fullname is required</div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- <input type="text" class = "form-control" formControlName = "name" size = 50 id="fname" name="fname" style="text-align: center" placeholder = "Username"> -->
+      <!-- <input type="text" class = "form-control" formControlName = "name" size = 50 id="fname" name="fname" style="text-align: center" placeholder = "Username">  -->
 
-      <!-- <label for="contact">Contact</label> -->
+      <!-- <label for="contact">Contact</label>
       <div class=" input-group">
         <div class="input-group-prepend">
           <fa-icon [icon]="faPhone" style="color:black; font-size: larger;" class="input-group-text p-2"></fa-icon>
@@ -76,10 +76,10 @@
         </div>
       </div>
     </div>
-    <br>
+    <br> -->
     <div class="radios">
       <h1 class="header">How would you like to pay?</h1>
-      <!-- <div class="input-group mb-3">
+       <!-- <div class="input-group mb-3">
         <input type="radio" name="payment" value="credit" id="credit" (change)="radioChangeHandler($event)">
         <label for="credit">Credit &nbsp;&nbsp;<i class="fa fa-credit-card" style="color:green; font-size: larger;"
             aria-hidden="true"></i>
@@ -110,6 +110,6 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </form>
 
