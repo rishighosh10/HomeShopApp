@@ -30,8 +30,7 @@ export class SignupComponent implements OnInit {
   submitted = false;
   PasswordError = false;
   ShowPasswordError = false;
-  // ShowPasswordError: Subject<boolean> = new Subject();
-  // this.ShowPasswordError.next(false);
+
 
   constructor(
     private formBuilder: FormBuilder,

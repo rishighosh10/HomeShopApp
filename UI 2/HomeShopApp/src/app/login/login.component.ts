@@ -87,29 +87,15 @@ export class LoginComponent implements OnInit {
       this.loginForm.reset();
       this.submitted = false;
 
-      // if (this.localStorageService.get('role') == 'Admin') {
-      //   this.router.navigateByUrl('/admin');
-      //   // this.localStorageService.setUserLoggedInStatus(true);
-      // } else
+
       if (this.localStorageService.get('role') == 'Customer') {
         this.router.navigateByUrl('');
-        // this.localStorageService.setUserLoggedInStatus(true);
+
       } else {
         this.router.navigateByUrl('/login');
-        // this.localStorageService.setUserLoggedInStatus(false);
+
       }
     });
 
-    // this.loginForm.reset();
-    // alert('Login successfully');
-    // this.submitted = false;
-
-    // if (this.localStorageService.get('role') == 'Admin') {
-    //   this.router.navigateByUrl('/admin');
-    // } else if (this.localStorageService.get('role') == 'Customer') {
-    //   this.router.navigateByUrl('/login');
-    // } else {
-    //   this.router.navigateByUrl('/login');
-    // }
   }
 }

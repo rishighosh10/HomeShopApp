@@ -6,14 +6,6 @@ export interface ICustomerOrder {
   customerId: number;
 }
 
-// export interface IGuestOrder {
-//   orderDate: Date;
-//   amount: number;
-//   paymentMethod: string;
-//   transactionId: string;
-//   orderStatus: string;
-//   guestId: number;
-// }
 
 export interface ICustomerOrderDetails {
   customerOrderId: number;
@@ -22,9 +14,3 @@ export interface ICustomerOrderDetails {
   quantity: number;
 }
 
-// export interface IGuestOrderDetails {
-//   guestOrderId: number;
-//   foodMenuId: number;
-//   unitPrice: number;
-//   quantity: number;
-// }
