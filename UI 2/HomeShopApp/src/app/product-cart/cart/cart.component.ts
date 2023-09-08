@@ -32,7 +32,7 @@ export class CartComponent {
   }
 
   getGST(subtotal: number): number {
-    const gstPercentage = 5; // Change this if your GST rate is different
+    const gstPercentage = 5;
     return (subtotal * gstPercentage) / 100;
   }
 
@@ -82,26 +82,4 @@ export class CartComponent {
 
 
   }
-
-  // checkout() {
-  //   // Get the cart data
-  //   const cartItems = this.cartItems;
-
-  //   // Save the cart data in the DataService
-  //   this.detailsService.setCartData(cartItems);
-
-  //   // Navigate to the details component
-  //   this.router.navigate(['/details']);
-  // }
-
-  // goToDetails(): void {
-  //   const cartItems = this.menuCartOrderService.getCartItemsService();
-  //   const Amountpayable = this.amountPayable;
-  //   //  this.cartService.AmountPayable=Amountpayable;
-  //   this.router.navigate(['/details'], { state: { cartItems, Amountpayable } });
-  // }
-
-  // proceedToOrderDetails() {
-  //   this.router.navigate(['/details'], { state: { amountPayable: this.amountPayable } });
-  // }
 }

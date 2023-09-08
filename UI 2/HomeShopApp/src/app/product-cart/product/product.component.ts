@@ -48,32 +48,7 @@ export class ProductComponent {
     else return '';
   }
 
-  // toggleTypeFilter() {
-  //   if (this.foodTypeId == 1) {
-  //     this.foodTypeId = 2;
-  //     this.isVeg = false;
-  //   } else {
-  //     this.foodTypeId = 1;
-  //     this.isVeg = true;
-  //   }
-  //   if(this.showFullMenu)
-  //   {
-  //     this.filteredItems = this.items.filter((item) => {
-  //       return (
-  //         item.foodTypeId == this.foodTypeId
-  //      );
-  //     });
-  //   }
-  //   else{
-  //     this.filteredItems = this.items.filter((item) => {
-  //       return (
-  //         item.foodCategoryId == this.foodCategoryId &&
-  //         item.foodTypeId == this.foodTypeId
-  //       );
-  //     });
-  //   }
 
-  // }
 
   addToCart(productId: number, itemName: string, price: number): void {
     this.productCartService.addItemToCartService(
@@ -98,8 +73,4 @@ export class ProductComponent {
     this.filteredItems = this.items;
     this.showFullMenu=true;
   }
-
-  // setSelectedFoodCategoryId(selectedFoodCategoryId: number) {
-  //   this.selectedFoodCategoryId = selectedFoodCategoryId;
-  // }
 }

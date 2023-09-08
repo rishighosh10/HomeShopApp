@@ -22,11 +22,10 @@ import {
 import {
   ICustomerOrder,
   ICustomerOrderDetails,
-  //IGuestOrder,
-  //IGuestOrderDetails,
+
 } from './order';
 import { v4 as uuidv4 } from 'uuid';
-//import { IGuest } from './guest';
+
 
 @Component({
   selector: 'app-order-details',
@@ -60,7 +59,7 @@ export class OrderDetailsComponent {
   credit = document.getElementById('credit') as HTMLInputElement | null;
   cash = document.getElementById('cash') as HTMLInputElement | null;
 
-  // amountPayable: any=CartComponent.amountPayable;
+
   radioChangeHandler(event: any) {
     this.selectedMethod = event.target.value;
   }
@@ -80,14 +79,13 @@ export class OrderDetailsComponent {
     private localStorageService: LocalStorageService
   ) {
     this.cartItems = productCartService.getCartItemsService();
-    //console.log(this.cartItems);
-    // this.AmountPayable=this.cartService.AmountPayable;
+
     if (this.localStorageService.get('role') == 'Customer') {
       this.isCustomer = true;
       this.customerId = this.localStorageService.get('customerId');
       this.customerName = this.localStorageService.get('name');
       this.customerContact = this.localStorageService.get('contact');
-      // console.log(this.isCustomer);
+
       console.log(this.customerName + '  ---  ' + this.customerContact);
     }
   }
@@ -110,13 +108,7 @@ export class OrderDetailsComponent {
       });
     }
 
-    //only number will be add
-    // const CartItem = this.orderDetailsService.getOrderDetailsCartData();
 
-    // Use the cart data as needed in the details component
-    // console.log(CartItem);
-    // const cartData = this.orderDetailsService.getOrderDetailsCartData();
-    // Convert the cart data to the desired format
     this.products = this.cartItems.map((item) => {
       return {
         ProductId: item.productId,
@@ -131,16 +123,7 @@ export class OrderDetailsComponent {
     this.finalAmount = this.productCartService.getFinalAmountService();
   }
 
-  // getGuestId(): void {
-  //   this.orderDetailsService.getGuestData().subscribe(
-  //     (data: any) => {
-  //       this.guestTablereturn = data;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error:', error);
-  //     }
-  //   );
-  // }
+
 
   get f() {
     return this.orderDetailsForm.controls;
@@ -185,46 +168,7 @@ export class OrderDetailsComponent {
           });
         });
     }
-    // else {
-    //   // let guest: IGuest = {
-    //     name: this.orderDetailsForm.get('name')?.value,
-    //     contact: this.orderDetailsForm.get('contact')?.value,
-    //   };
-    //   this.orderDetailsService.addGuestService(guest).subscribe((data) => {
-    //     console.log(data);
-    //     this.guestId = data.guestId;
 
-    //     let guestOrder: IGuestOrder = {
-    //       orderDate: new Date(),
-    //       amount: this.finalAmount,
-    //       paymentMethod: this.selectedMethod,
-    //       transactionId: uuidv4(),
-    //       orderStatus: 'Pending',
-    //       guestId: this.guestId,
-    //     };
-
-    //     this.orderDetailsService
-    //       .addGuestOrderService(guestOrder)
-    //       .subscribe((data) => {
-    //         console.log(data);
-
-    //         this.products.forEach((element) => {
-    //           let guestOrderDetails: IGuestOrderDetails = {
-    //             guestOrderId: data.guestOrderId,
-    //             foodMenuId: element.FoodMenuId,
-    //             unitPrice: element.Price,
-    //             quantity: element.Qty,
-    //           };
-    //           this.orderDetailsService
-    //             .addGuestOrderDetailsService(guestOrderDetails)
-    //             .subscribe((data) => {
-    //               console.log(data);
-    //     //           this.router.navigateByUrl('/payment');
-    //             });
-    //         });
-    //       });
-    //   });
-    // }
   }
 }
 
