@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
-    isAdmin: new FormControl(''),
   });
   submitted = false;
   isAdmin = false;

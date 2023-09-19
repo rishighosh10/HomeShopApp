@@ -20,7 +20,6 @@ export class ProductComponent {
   quantity: number = 1;
   price: number = 0;
   filteredCategoryItems: any[] = [];
-  // selectedFoodCategoryId: number = 1;
   errorMessage: string = '';
 
   constructor(public productCartService: ProductCartService) {}
