@@ -16,10 +16,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  // loginimgUrl = '../assets/login-images/login-image.png'
-  // type: string = "password";
-  // isText: boolean = false;
-  // eyeIcon: string = "fa fa-eye-slash"
+
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
