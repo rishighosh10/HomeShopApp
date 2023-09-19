@@ -17,6 +17,7 @@ import { DatePipe } from '@angular/common';
 import { CustomersOrderComponent } from './customer-order/customer-order.component';
 import { ProductComponent } from './product-cart/product/product.component';
 import { PaymentComponent } from './order-details/payment/payment/payment.component';
+import { ProductDetailsComponent } from './product-cart/product/product-details/product-details.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
     AppComponent,
     ProductCartComponent,
     ProductComponent,
+    ProductDetailsComponent,
     CartComponent,
     OrderDetailsComponent,
     CustomersOrderComponent,
