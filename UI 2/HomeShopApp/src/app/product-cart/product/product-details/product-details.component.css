@@ -1,14 +1,20 @@
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto ;
-  background-color: #2196F3;
+  grid-template-columns: 30% 70% ;
+  grid-template-areas: "product-image" "product-description" ;
+  min-height: 100%;
+  background-color: white;
   padding: 10px;
 }
 
-.grid-item {
-  background-color: #2196F3 (255, 255, 255, 0.8);
-  border: 1px solid green (0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.product-description{
+  /* background-color: rgb(223, 139, 35); */
+  padding-left: 5%;
+  padding-top: 5%;
+  text-align: justify;
 }

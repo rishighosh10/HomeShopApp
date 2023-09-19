@@ -1,4 +1,57 @@
 <div class="grid-container">
-  <div class="grid-item">image</div>
-  <div class="grid-item">description</div>
+  <!-- <div class="grid-item"> -->
+    <!-- <img src="{{'../../../../../assets/images/' + getproductCategoryName(item.productCategoryId) + '/' + item.image + '.jpg'}}" alt=""
+        srcset="" class="card-image"> -->
+        <img src="{{'../../../../../assets/images/' + getproductCategoryName(Item.productCategoryId) + '/' + Item.image + '.jpg'}}" alt=""
+        srcset="" class="product-image">
+  <!-- </div> -->
+  <div class="container product-description">
+    <div class="row">
+      <div class="col-3 font-weight-bold">
+        Product Name :
+      </div>
+      <div class="col">
+        {{Item.itemName}}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        Description :
+      </div>
+      <div class="col">
+        {{Item.description}}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        Price :
+      </div>
+      <div class="col">
+        {{Item.price | currency:'INR':'symbol':'1.2-2'}}
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        <button class="order-button" (click)="addToCart(Item.productId, Item.itemName, Item.price)">
+          <fa-icon [icon]="faCartPlus" style="color: red ; font-size: x-large;">
+          </fa-icon></button>
+      </div>
+      <div class="col">
+        Column
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-3">
+        <button (click)="showProductList()"> Back </button>
+      </div>
+    </div>
+
+  </div>
 </div>

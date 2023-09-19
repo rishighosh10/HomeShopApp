@@ -31,6 +31,16 @@ export class ProductCartService {
       .pipe(catchError(this.handleError));
   }
 
+  getproductDataByIdService(Id: number): Observable<any> {
+    const headers = {
+      'content-type': 'application/json',
+      Authorization: 'Bearer ' + this.localStorageService.get('token'),
+    };
+    return this.http
+      .get<any>(this.productApiUrl + '/' + Id, { headers: headers })
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(err: HttpErrorResponse) {
 
     let errorMessage = '';
@@ -99,6 +109,37 @@ export class ProductCartService {
     }
     return Amount;
   }
+
+  selectedProductId!: number;
+
+  setSelectedProductId(selectedProductId: number) {
+  this.selectedProductId = selectedProductId;
+  }
+
+  getSelectedProductId() {
+    return this.selectedProductId;
+  }
+
+  showProductDetail: boolean = false;
+  showProductList: boolean = true;
+
+  setShowProductDetail(showProductDetail: boolean) {
+    this.showProductDetail = showProductDetail;
+    }
+
+    getShowProductDetail() {
+      return this.showProductDetail;
+    }
+  setShowProductList(showProductList: boolean) {
+      this.showProductList = showProductList;
+    }
+
+    getShowProductList() {
+      return this.showProductList;
+    }
+
+
+
 
   //#region Cart Area
 }

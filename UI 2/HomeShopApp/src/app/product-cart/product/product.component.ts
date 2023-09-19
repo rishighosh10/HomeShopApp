@@ -11,6 +11,16 @@ import { ProductCartComponent } from '../product-cart.component';
 export class ProductComponent {
   faCartPlus = faCartPlus;
 
+
+  // showProductDetail: boolean = false;
+  // showProductList: boolean = true;
+
+
+  showProductDetail: boolean = this.productCartService.getShowProductDetail();
+  showProductList: boolean = this.productCartService.getShowProductList();
+  selectedProductId = 0;
+
+
   items!: any[];
   isNew: boolean = false;
   productCategoryId: number = 1;
@@ -71,5 +81,15 @@ export class ProductComponent {
   showAllItems() {
     this.filteredItems = this.items;
     this.showFullMenu=true;
+  }
+
+  showProductDetails(productId: number){
+    this.productCartService.setSelectedProductId(productId);
+    this.showProductDetail = true;
+    this.showProductList = false;
+
+    this.productCartService.setShowProductDetail(true);
+    this.productCartService.setShowProductList(false);
+
   }
 }

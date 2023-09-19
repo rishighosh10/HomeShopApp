@@ -25,13 +25,17 @@
   </div>
 
 <div class="product-area">
+<div *ngIf="showProductDetail">
   <app-product-details></app-product-details>
-  <!-- <div class="card-list">
+</div>
+  <div class="card-list" *ngIf="showProductList">
     <div class="card" *ngFor="let item of filteredItems">
       <img src="{{'../../../../../assets/images/' + getproductCategoryName(item.productCategoryId) + '/' + item.image + '.jpg'}}" alt=""
         srcset="" class="card-image">
       <div class="card-content">
-        <h3 class="card-title">{{ item.itemName }}</h3>
+        <button class="productName-button" (click)="showProductDetails(item.productId)">
+          <h3 class="card-title">{{ item.itemName }}</h3>
+        </button>
         <div class="card-footer">
           <div class="price-section">
             <span class="price"> {{ item.price | currency:'INR':'symbol':'1.2-2' }}</span>
@@ -42,6 +46,6 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
 </div>
