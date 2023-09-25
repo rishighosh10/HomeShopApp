@@ -32,6 +32,14 @@
     <div class="card" *ngFor="let item of filteredItems">
       <img src="{{'../../../../../assets/images/' + getproductCategoryName(item.productCategoryId) + '/' + item.image + '.jpg'}}" alt=""
         srcset="" class="card-image">
+        <div class="star-rating">
+          <span class="star" *ngFor="let star of stars; let i = index" (click)="rate(i + 1)" [ngClass]="{'filled': i < currentRating}">&#9733;</span>
+        </div>
+        <button class="like-button" [ngClass]="{'liked': isLiked}" (click)="toggleLike()">
+          <span class="like-icon">&#10084;</span>
+          <span class="like-count">{{ likeCount }}</span>
+        </button>
+
       <div class="card-content">
         <button class="productName-button" (click)="showProductDetails(item.productId)">
           <h3 class="card-title">{{ item.itemName }}</h3>

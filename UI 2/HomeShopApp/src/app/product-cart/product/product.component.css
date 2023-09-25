@@ -148,3 +148,36 @@
   border: none;
   background: none;
 }
+.star-rating {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.star {
+  color: #ffca28;
+  cursor: pointer;
+}
+
+.star.filled {
+  color: #ffca28;
+}
+.like-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.like-icon {
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.liked .like-icon {
+  color: #ff0000;
+}
+
+.like-count {
+  font-size: 16px;
+}

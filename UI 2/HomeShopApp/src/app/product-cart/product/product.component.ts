@@ -2,20 +2,26 @@ import { Component } from '@angular/core';
 import { ProductCartService } from '../../product-cart.service';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { ProductCartComponent } from '../product-cart.component';
+import {  Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
+
 })
 export class ProductComponent {
+@Input() maxRating = 5;
+@Input() currentRating: any = 0;
+@Output() ratingClicked = new EventEmitter<number>();
+stars: number[] = [];
+
+@Input() initialLikeCount = 0;
+isLiked = false;
+likeCount = this.initialLikeCount;
+
+
   faCartPlus = faCartPlus;
-
-
-  // showProductDetail: boolean = false;
-  // showProductList: boolean = true;
-
-
   showProductDetail: boolean = this.productCartService.getShowProductDetail();
   showProductList: boolean = this.productCartService.getShowProductList();
   selectedProductId = 0;
@@ -32,7 +38,10 @@ export class ProductComponent {
   filteredCategoryItems: any[] = [];
   errorMessage: string = '';
 
-  constructor(public productCartService: ProductCartService) {}
+  constructor(public productCartService: ProductCartService) {
+    this.stars = Array(this.maxRating).fill(0).map((_, i) => i + 1);
+  }
+
 
   ngOnInit() {
     this.getproductData();
@@ -91,5 +100,13 @@ export class ProductComponent {
     this.productCartService.setShowProductDetail(true);
     this.productCartService.setShowProductList(false);
 
+  }
+  rate(rating: number) {
+    this.currentRating = rating;
+    this.ratingClicked.emit(rating);
+  }
+  toggleLike() {
+    this.isLiked = !this.isLiked;
+    this.likeCount += this.isLiked ? 1 : -1;
   }
 }

@@ -42,7 +42,15 @@
           </fa-icon></button>
       </div>
       <div class="col">
-        Column
+        <div class="star-rating">
+          <span class="star" *ngFor="let star of stars; let i = index" (click)="rate(i + 1)" [ngClass]="{'filled': i < currentRating}">&#9733;</span>
+        </div>
+      </div>
+      <div class="col">
+        <button class="like-button" [ngClass]="{'liked': isLiked}" (click)="toggleLike()">
+          <span class="like-icon">&#10084;</span>
+          <span class="like-count">{{ likeCount }}</span>
+        </button>
       </div>
     </div>
     <br>
