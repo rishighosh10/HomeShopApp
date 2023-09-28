@@ -142,7 +142,7 @@ export class OrderDetailsComponent {
         amount: this.finalAmount,
         paymentMethod: this.selectedMethod,
         transactionId: uuidv4(),
-        orderStatus: 'Pending',
+        orderStatus: 'Complete',
         customerId: this.customerId,
       };
 

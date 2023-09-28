@@ -3,6 +3,7 @@ import { CustomersOrderService } from './customer-order.service';
 import { LocalStorageService } from '../local-storage.service';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-customers-order',
   templateUrl: './Customer-order.component.html',
@@ -29,6 +30,7 @@ export class CustomersOrderComponent {
     });
   }
 
+
   orderRating(orderId: number, rate: number){
     let custRating: any = {
       customerOrderId: orderId,
@@ -37,7 +39,8 @@ export class CustomersOrderComponent {
     this.CustomersOrderService.patchOrderRatingService(orderId, custRating)
     .subscribe((data) =>{
         console.log(data);
-    });
-  }
+        this.ngOnInit();
+  });
+ }
 }
 

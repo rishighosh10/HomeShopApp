@@ -21,6 +21,7 @@ import { PaymentComponent } from './order-details/payment/payment/payment.compon
 import { ProductDetailsComponent } from './product-cart/product/product-details/product-details.component';
 import { LikeButtonComponent } from './like-button/like-button.component';
 
+
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
@@ -47,6 +48,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     NgbModule,
+
+
+
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
