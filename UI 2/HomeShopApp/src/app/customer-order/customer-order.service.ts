@@ -18,6 +18,8 @@ export class CustomersOrderService {
 
   private customerSOrderUrlApi =
     'https://localhost:44359/api/CustomerOrders/CustomerId';
+    private customerRatingUrlApi =
+    'https://localhost:44359/api/CustomerOrders';
 
   getCustomersOrderService(custId: number): Observable<any[]> {
     const headers = {
@@ -34,6 +36,18 @@ export class CustomersOrderService {
       );
   }
 
+
+  patchOrderRatingService(orderId: number ,custRating: any): Observable<any> {
+    const headers = {
+      'content-type': 'application/json',
+      Authorization: 'Bearer ' + this.localStorageService.get('token'),
+    };
+    console.log(custRating);
+    const body = JSON.stringify(custRating);
+    console.log(body);
+    return this.http.patch(this.customerRatingUrlApi + "/" + orderId, body, { headers: headers });
+  }
+
   private handleError(err: HttpErrorResponse) {
 
     let errorMessage = '';
@@ -47,4 +61,6 @@ export class CustomersOrderService {
     console.error(errorMessage);
     return throwError(() => errorMessage);
   }
+
+
 }
